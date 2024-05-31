@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  --theme-color: #403634;
+  --active-color: #fcc916;
+  --active-bg-color: #6b5e5b;
+  --hover-color: #fcc916;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover {
+  @apply text-[var(--hover-color)];
+}
+
+/* HEADER */
+header,
+nav {
+  @apply bg-[var(--theme-color)];
+}
+
+.link-item a {
+  @apply block py-2 px-3 text-white border-b;
+  @apply border-gray-100 hover:bg-gray-50;
+  @apply md:hover:bg-transparent md:border-0;
+  @apply md:hover:text-blue-600 md:p-0;
+  @apply px-4 py-2;
+}
+
+.link-item.active {
+  @apply bg-[var(--active-bg-color)];
+}
+
+.link-item.active a {
+  @apply text-[var(--hover-color)];
+}
+
+.link-item:hover a {
+  @apply text-[var(--hover-color)];
+}
+
+.cover-photo {
+  background-image: url("./assets/bg-sil.jpg");
+}
+
+.logo-display {
+  background-image: url("./assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: inline-block;
+  width: 350px;
+}
+
+/* FOOTER */
+footer {
+  @apply bg-[var(--theme-color)] text-white py-2;
+}
+
+/* CONTENT */
+.page-wrapper {
+  @apply mx-auto w-full max-w-screen-lg py-8;
+}
+
+.content-wrapper {
+  @apply min-h-screen;
+}
+
+button.btn {
+  @apply text-white bg-[var(--theme-color)] px-4 py-2;
+  @apply rounded-md text-[var(--active-color)];
+}
+
+button.btn:hover {
+  @apply bg-[var(--active-bg-color)] text-white;
+}
+
+/* modal */
+.modal {
+    @apply flex justify-center;
+}
+
+.backdrop {
+  @apply bg-black z-[9999] opacity-50 fixed w-screen h-screen left-0 top-0;
+}
+
+.modal-content {
+  @apply absolute z-[99999999] top-0 md:top-1/4 bg-white rounded-lg w-screen md:w-1/2 min-h-96;
+}
+
+.menu.active {
+  @apply text-[var(--hover-color)];
+}
+
+/* Menu */
+.menu-wrapper {
+  @apply sm:hidden flex justify-end w-full bg-[var(--theme-color)] absolute top-0;
+}
+
+.menu-button {
+  @apply bg-transparent text-white hover:text-[#FFCC00] px-4 py-2 rounded focus:outline-none;
+}
+
+.dropdown {
+  @apply absolute top-0 right-0 w-1/2 bg-white rounded shadow-md mt-2 z-50;
+}
